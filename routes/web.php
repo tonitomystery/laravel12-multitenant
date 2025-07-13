@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Stancl\Tenancy\Middleware\InitializeTenancyByPath;
 use App\Http\Controllers\TenantController;
+use App\Http\Middleware\SetDefaultTenantForUrls;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,11 +21,15 @@ Route::middleware(['web'])->group(function () {
 });
 
 
+
+// Set up tenant routes with automatic parameter handling
 Route::group([
     'prefix' => '/{tenant}',
-    'middleware' => [InitializeTenancyByPath::class],
+    'middleware' => [InitializeTenancyByPath::class, SetDefaultTenantForUrls::class],
 ], function () {
     Route::get('/dashboard', function () {
         return 'Dashboard del tenant: ' . tenant('id');
     });
+
+    
 });
