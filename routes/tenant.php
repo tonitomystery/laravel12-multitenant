@@ -15,18 +15,4 @@ use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 | Estas rutas se cargan automáticamente por el TenantRouteServiceProvider.
 */
 
-// Route::middleware([
-//     'web',
-//     InitializeTenancyByPath::class,
-//     // PreventAccessFromCentralDomains::class,
-// ])
-// ->prefix('{tenant}')
-// ->group(function () {
-//     Route::get('/', function () {
-//         return 'Tenant actual: ' . tenant('id');
-//     });
-    
-//     Route::get('/dashboard', function () {
-//         return 'Dashboard del tenant: ' . tenant('id');
-//     });
-// });
+ 
