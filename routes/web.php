@@ -28,11 +28,3 @@ Route::group([
         return 'Dashboard del tenant: ' . tenant('id');
     });
 });
-
-
-/*
-|--------------------------------------------------------------------------
-| Tenant Routes
-|--------------------------------------------------------------------------
-| Rutas que son accesibles bajo el prefijo /{tenant}/
-*/
